@@ -1,0 +1,13 @@
+cscope.in.out
+cscope.out
+cscope.po.out
+tags
+/log.b4*m.txt
+/log.t5?.txt
+/src0[0-9]/
+/h0[0-9]/
+[0-9a-z].txt
+/ttt/
+/tt[0-9]/
+nohup.out
+Log/log.txt

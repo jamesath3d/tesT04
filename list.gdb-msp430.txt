@@ -1,0 +1,8 @@
+gdb-msp430: /usr/bin/msp430-gdb
+gdb-msp430: /usr/bin/msp430-run
+gdb-msp430: /usr/lib/libmsp430-sim.a
+gdb-msp430: /usr/share/doc/gdb-msp430/README.Debian
+gdb-msp430: /usr/share/doc/gdb-msp430/changelog.Debian.gz
+gdb-msp430: /usr/share/doc/gdb-msp430/copyright
+gdb-msp430: /usr/share/man/man1/msp430-gdb.1.gz
+gdb-msp430: /usr/share/man/man1/msp430-run.1.gz
