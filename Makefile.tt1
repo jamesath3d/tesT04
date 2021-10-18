@@ -59,11 +59,20 @@ msp430objcopyCMD=     \
 #"/home/ti/ti/ccs1040/ccs/tools/compiler/ti-cgt-msp430_20.2.5.LTS/bin/hex430" --memwidth=8 --romwidth=8 --diag_wrap=off --ti_txt -o "BlinkLED_MSP430FR2433_03.txt" "BlinkLED_MSP430FR2433_03.out" 
 msp430txt1:="/home/ti/ti/ccs1040/ccs/tools/compiler/ti-cgt-msp430_20.2.5.LTS/bin/hex430"
 msp430txt3:=--memwidth=8 --romwidth=8 --diag_wrap=off --ti_txt -o
-msp430txt5="$@.ti.txt" "$@.out" 
-msp430txtCMD=\
+msp430txt19="$@.out.ti.txt" "$@.out" 
+msp430txt29="$@.hex.ti.txt" "$@.hex" 
+msp430txtCMD1=\
 			 $(msp430txt1) \
 			 $(msp430txt3) \
-			 $(msp430txt5) \
+			 $(msp430txt19) 
+msp430txtCMD2=\
+			 $(msp430txt1) \
+			 $(msp430txt3) \
+			 $(msp430txt29) 
+msp430asm1:=msp430-objdump -D
+msp430asmCMD:=\
+			 $(msp430asm1) \
+			 "$(tName).hex"  > "$(tName).hex.asm" 
 
 
 define helpText2
@@ -84,6 +93,8 @@ $(tName):
 	@echo && echo "$${helpText}" && echo 
 	$(msp430cmd)
 	$(msp430objcopyCMD)
-	$(msp430txtCMD)
+	$(msp430txtCMD1)
+	$(msp430txtCMD2)
+	$(msp430asmCMD)
 	@echo && ls -l $${PWD}/$@.* && echo
 
