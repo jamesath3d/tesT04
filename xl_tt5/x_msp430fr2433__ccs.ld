@@ -1,0 +1,1 @@
+../xl_tt2/x_msp430fr2433__ccs.ld
